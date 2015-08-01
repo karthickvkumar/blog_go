@@ -1,0 +1,48 @@
+{{define "edit"}} {{template "header" .}}
+<!-- <meta http-equiv="refresh" content="0; url=:8080" /> -->
+<div class="container">
+    <div class="jumbotron">
+        <h2>Welcome to Atomic Blog</h2>
+        <p>Lets start to log your thoughts,ideas,experience and share with Everybody!</p>
+    </div>
+    <table>
+        <form method="post" action="/update">
+            <tbody>
+                <!-- {{range .Results}} -->
+                <tr>
+                    <td><b>Title:</b>
+                        <br>
+                        <textarea id="inputName" name="inputTitle" id="{{.Ids}}" rows="2" cols="135">{{.Name}} </textarea>
+                    </td>
+                </tr>
+                <tr hidden>
+                    <td>
+                        <textarea type="text" class="form-control" id="inputSubject" name="inputId">{{.Ids}}</textarea>
+                </tr>
+                </td>
+                <tr>
+                    <td><b>Abstract:</b>
+                        <br>
+                        <textarea id="inputSubject" id="{{.Ids}}" name="inputAbstract" rows="4" cols="135">{{.Mes}} </textarea>
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Description:</b>
+                        <br>
+                        <textarea id="inputMessage" id="{{.Ids}}" name="inputDescription" rows="8" cols="135">{{.Des}} </textarea>
+                    </td>
+                    </td>
+                </tr>
+                <!--  {{end}} -->
+            </tbody>
+    </table>
+    <tr>
+        <br>
+        <td>
+            <button type="submit" class="btn btn-primar">Update Blog</button>
+        </td>
+        </form>
+        <tr>
+</div>
+{{template "footer" .}} {{end}}

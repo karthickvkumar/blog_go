@@ -1,0 +1,32 @@
+{{define "about"}}
+{{template "header" .}}
+<div class="container">
+  <div class="jumbotron">
+    <h2>Welcome to Atomic Blog</h2>
+    <p>Lets start to log your thoughts,ideas,experience and share with Everybody!</p> 
+  </div>
+</div>
+ <div class="container">
+        <table class="table table-striped">
+            <tbody>
+        <!-- {{range .Results}} -->
+                <tr>
+        
+                    <td><b>Title:</b> {{.Name}} </td>
+                </tr>
+                <tr>
+        
+                    <td><b>Abstract:</b> {{.Mes}} </td>
+                </tr>
+                <tr>
+                	<td><b>Description:</b> {{.Des}} </td>
+
+                </tr>
+                <th>
+                    <a href="/">back</a>
+                </th>
+       <!--  {{end}} -->
+            </tbody>
+        </table>
+    </div>{{template "footer" .}}
+{{end}}

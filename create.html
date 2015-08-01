@@ -1,0 +1,45 @@
+{{define "create"}} {{template "header" .}}
+<!-- <meta http-equiv="refresh" content="0; url=:8080" /> -->
+<div class="container">
+    <div class="jumbotron">
+        <h2>Welcome to Atomic Blog</h2>
+        <p>Lets start to log your thoughts,ideas,experience and share with Everybody!</p>
+    </div>
+    <div style="margin-top:75px">
+        <div class="panel panel-default" style="margin:0 auto;width:500px">
+            <div class="panel-heading">
+                <h2 class="panel-title">Create Blog</h2>
+            </div>
+            <div class="panel-body">
+                <form name="contactform" method="POST" action="/save" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="inputName" class="col-lg-2 control-label">Title</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="inputName" name="inputTitle" placeholder="Title of blog">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSubject" class="col-lg-2 control-label">Abstract</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="inputSubject" name="inputAbstract" placeholder="Abstract of blog">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword1" class="col-lg-2 control-label">Description</label>
+                        <div class="col-lg-10">
+                            <textarea class="form-control" rows="4" id="inputMessage" name="inputDescription" placeholder="Description about blog"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-default">
+                                Publish
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{template "footer" .}} {{end}}

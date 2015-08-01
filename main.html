@@ -1,0 +1,13 @@
+{{define "main"}}
+{{template "header" .}}
+<div class="content">
+	 <div class="login-card">
+    <h1>Atomic Blog</h1><br>
+  <form method="post" action="/login">
+    <input type="text" id="name" name="name" placeholder="user name">
+    <input type="password" id="password" name="password" placeholder="password">
+    <input type="submit" name="login" class="login login-submit" value="login">
+  </form>
+</div>
+{{template "footer" .}}
+{{end}}

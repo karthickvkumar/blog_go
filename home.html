@@ -1,0 +1,80 @@
+{{define "home"}} {{template "header" .}}
+<div class="container">
+    <div class="jumbotron">
+        <h2>Welcome to Atomic Blog</h2>
+        <p {{.Mode}}>Lets start to log your thoughts,ideas,experience and share with Everybody!</p>
+        <p {{.View}}>Welcome, <em><strong>{{.Tag}}</strong></strong></em> &nbsp;share your thoughts,ideas,experience Everybody! </p>
+    </div>
+</div>
+<div class="container">
+    <table class="table table-striped">
+        <tbody {{.Mode}}>
+            {{range.Results}}
+            <!--                 <tr>
+                    <td>Id: {{.Ids}} </td>                                    
+                </tr> -->
+            <tr>
+                <td><b>Title:</b> {{.Name}} </td>
+            </tr>
+            <tr>
+                <td><b>Abstract:</b> {{.Mes}} </td>
+            </tr>
+            <th>
+                <a href="about/{{.Ids}}" >read more</a>
+                <!--                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="create">create</a> -->
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="edit/{{.Ids}}" hidden >edit</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <script type="text/javascript">
+                function AlertIt() {
+                    var answer = confirm("Do you want to delete Blog")
+                    if (answer)
+                        window.location = "about/delete/{{.Ids}}";
+                }
+                </script>
+                <p hidden>hello</p><a href="javascript:AlertIt();" hidden >delete</a>
+            </th>
+            {{end}}
+        </tbody>
+    
+        <tbody {{.View}}>
+            {{range.Results}}
+            <!--                 <tr>
+                    <td>Id: {{.Ids}} </td>                                    
+                </tr> -->
+            <tr>
+                <td><b>Title:</b> {{.Name}} </td>
+            </tr>
+            <tr>
+                <td><b>Abstract:</b> {{.Mes}} </td>
+            </tr>
+            <th>
+                <a href="about/{{.Ids}}" >read more</a>
+                <!--                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="create">create</a> -->
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="edit/{{.Ids}}" >edit</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <script type="text/javascript">
+                function AlertIt() {
+                    var answer = confirm("Do you want to delete Blog")
+                    if (answer)
+                        window.location = "about/delete/{{.Ids}}";
+                }
+                </script>
+                <p hidden>hello</p><a href="javascript:AlertIt();" >delete</a>
+            </th>
+            {{end}}
+        </tbody>
+    </table>
+    <tbody >
+        <table>
+            <tr >
+                <td>
+                    <a href="create" {{.View}}>
+                        <button  type="button" class="btn btn-primary">Create Post</button>
+                </td>
+            </tr>
+    </tbody>
+    </table>
+</div>
+{{template "footer" .}} {{end}}

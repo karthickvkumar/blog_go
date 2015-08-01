@@ -1,0 +1,39 @@
+{{define "header"}}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{.Title}}</title>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />  
+	</head>
+	<body>
+	   <nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">  
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ><a href="/{{.Url}}">{{.Active}}</a></li>
+      <li>{{.Tag}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><br>
+      <li ><form method="post" action="/logout">
+    <button {{.View}} type="submit">Logout</button>
+</form></li>
+    </ul>
+<!-- <ul class="nav navbar-nav navbar-right">
+<li>{{.Tag}}</li></ul>
+ --></div>
+<!-- <ul class="nav navbar-nav navbar-right">
+<li ><form method="post" action="/logout">
+    <button {{.View}} type="submit">Logout</button>
+</form></li></ul> --> 
+</nav><!-- 
+<hr>
+<small>User: %s</small>
+<form method="post" action="/logout">
+    <button type="submit">Logout</button>
+ -->
+{{end}}
